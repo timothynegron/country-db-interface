@@ -1,0 +1,8 @@
+{
+  "Data": 
+  {
+    "DefaultConnection": {
+      "ConnectionString": "Server= (localdb)\\MSSQLLocalDB;Database=test2021;Trusted_Connection=True;"
+    }
+  }
+}

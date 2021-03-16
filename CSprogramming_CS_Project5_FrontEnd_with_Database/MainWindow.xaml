@@ -1,0 +1,66 @@
+﻿<!--
+
+//***************************************************************************
+//File: MainWindow.xaml
+//
+//Purpose: To create a graphical user interface.
+//
+//Written By: Timothy Negron
+//
+//Compiler: Visual Studio C# 2017
+//
+//***************************************************************************
+
+-->
+
+<!-- Start of the main Window -->
+<Window x:Class="CSprogramming_CS_Project5_FrontEnd_with_Database.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CSprogramming_CS_Project5_FrontEnd_with_Database"
+        mc:Ignorable="d"
+        
+        Icon="Globe2.ico" 
+        Title="Country GUI v2 - Timothy Negron" Height="350" Width="800">
+
+    <!-- Start of the main Grid -->
+    <Grid Background="#FFE0ECFA">
+
+        <!-- All Labels -->
+        <Label Content="Country" HorizontalAlignment="Left" Margin="10,50,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+        <Label Content="Name" HorizontalAlignment="Left" Margin="420,75,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+        <Label Content="Capital" HorizontalAlignment="Left" Margin="420,105,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+        <Label Content="Region" HorizontalAlignment="Left" Margin="420,135,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+        <Label Content="Subregion" HorizontalAlignment="Left" Margin="420,165,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+        <Label Content="Population" HorizontalAlignment="Left" Margin="420,195,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+
+        <!-- All Textboxes (includes binding) -->
+        <TextBox x:Name="TextBoxName" Height="23" Margin="490,75,10,0" TextWrapping="Wrap" VerticalAlignment="Top" ToolTip="Selected Country's Name" Background="#FFE4F9E6" IsReadOnly="True" Text="{Binding SelectedItem.Name, ElementName=ListBoxCountry, Mode=OneWay}"/>
+        <TextBox x:Name="TextBoxCapital" Height="23" Margin="490,105,10,0" TextWrapping="Wrap" VerticalAlignment="Top" ToolTip="Selected Country's Capital" Background="#FFE4F9E6" IsReadOnly="True" Text="{Binding SelectedItem.Capital, ElementName=ListBoxCountry, Mode=OneWay}"/>
+        <TextBox x:Name="TextBoxRegion" Height="23" Margin="490,135,10,0" TextWrapping="Wrap" VerticalAlignment="Top" ToolTip="Selected Country's Region" Background="#FFE4F9E6" IsReadOnly="True" Text="{Binding SelectedItem.Region, ElementName=ListBoxCountry, Mode=OneWay}"/>
+        <TextBox x:Name="TextBoxSubregion" Height="23" Margin="490,165,10,0" TextWrapping="Wrap" VerticalAlignment="Top" ToolTip="Selected Country's Subregion" Background="#FFE4F9E6" IsReadOnly="True" Text="{Binding SelectedItem.Subregion, ElementName=ListBoxCountry, Mode=OneWay}"/>
+        <TextBox x:Name="TextBoxPopulation" Height="23" Margin="490,195,10,0" TextWrapping="Wrap" VerticalAlignment="Top" ToolTip="Selected Country's Population" Background="#FFE4F9E6" IsReadOnly="True" Text="{Binding SelectedItem.Population, ElementName=ListBoxCountry, Mode=OneWay}"/>
+
+        <!-- Menu -->
+        <Menu Margin="0,0,-0.4,0" VerticalAlignment="Top" Background="#FFBDE8BC">
+            <MenuItem Header="File">
+                <Button x:Name="ButtonExit" Content="Exit" Click="ButtonExit_Click"/>
+            </MenuItem>
+            <MenuItem Header="Import">
+                <Button x:Name="ButtonCountriesFromJSON" Content="Countries From JSON..." Click="ButtonCountriesFromJSON_Click"/>
+            </MenuItem>
+            <MenuItem Header="Help">
+                <Button x:Name="ButtonAbout" Content="About" Click="ButtonAbout_Click"/>
+            </MenuItem>
+        </Menu>
+
+        <!-- ListBox -->
+        <ListBox x:Name="ListBoxCountry" Margin="10,75,0,10" Width="400" HorizontalAlignment="Left" Background="#FFE4F9E6"/>
+
+    </Grid>
+    <!-- End of the main Grid -->
+    
+</Window>
+<!-- End of the main Window -->
